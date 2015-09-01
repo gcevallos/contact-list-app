@@ -23,7 +23,7 @@ class Contact
       contact_arr << first_name
       contact_arr << last_name
       contact_arr << email
-      puts contact_arr.inspect
+      ContactDatabase.add_to_database(contact_arr)
       
     end
  
