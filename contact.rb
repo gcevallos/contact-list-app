@@ -19,12 +19,14 @@ class Contact
       # TODO: Will initialize a contact as well as add it to the list of contacts
       
       new_contact = Contact.new(first_name,last_name, email)
+      id = ContactDatabase.total_contacts
       contact_arr = []
+      contact_arr << id 
       contact_arr << first_name
       contact_arr << last_name
       contact_arr << email
       ContactDatabase.add_to_database(contact_arr)
-      
+      puts "Contact ID:#{id}" 
     end
  
     def find(term)
