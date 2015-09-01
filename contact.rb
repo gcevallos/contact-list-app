@@ -1,9 +1,12 @@
 class Contact
  
-  attr_accessor :name, :email
+  attr_accessor :first_name, :last_name, :email
 
-  def initialize(name, email)
+  def initialize(first_name, last_name, email)
     # TODO: assign local variables to instance variables
+    @first_name = first_name
+    @last_name = last_name
+    @email = email
   end
  
   def to_s
@@ -12,8 +15,16 @@ class Contact
  
   ## Class Methods
   class << self
-    def create(name, email)
+    def create(first_name, last_name, email)
       # TODO: Will initialize a contact as well as add it to the list of contacts
+      
+      new_contact = Contact.new(first_name,last_name, email)
+      contact_arr = []
+      contact_arr << first_name
+      contact_arr << last_name
+      contact_arr << email
+      puts contact_arr.inspect
+      
     end
  
     def find(term)
@@ -31,3 +42,5 @@ class Contact
   end
  
 end
+
+#Contact.create("Jim", "something@else.com")
